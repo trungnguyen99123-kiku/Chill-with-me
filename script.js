@@ -1,10 +1,14 @@
 function showGenre(genreName, element) {
     var groups = document.getElementsByClassName('genre-group');
-    for (var i = 0; i < groups.length; i++) { groups[i].style.display = 'none'; }
+    for (var i = 0; i < groups.length; i++) { 
+        groups[i].style.display = 'none'; 
+    }
     document.querySelector('.' + genreName).style.display = 'block';
     
     var buttons = document.getElementsByClassName('tab-btn');
-    for (var i = 0; i < buttons.length; i++) { buttons[i].classList.remove('active'); }
+    for (var i = 0; i < buttons.length; i++) { 
+        buttons[i].classList.remove('active'); 
+    }
     element.classList.add('active');
 }
 
@@ -27,8 +31,16 @@ function togglePlay() {
     var player = document.getElementById('audio-player');
     var btn = document.getElementById('play-pause-btn');
     if (!player.src) return;
-    if (player.paused) { player.play(); btn.innerText = "Pause"; }
-    else { player.pause(); btn.innerText = "Play"; }
+    if (player.paused) { 
+        player.play(); 
+        btn.innerText = "Pause"; 
+    } else { 
+        player.pause(); 
+        btn.innerText = "Play"; 
+    }
 }
 
-function changeVolume(val) { document.getElementById('audio-player').volume = val; }
+function changeVolume(val) {
+    var player = document.getElementById('audio-player');
+    player.volume = val;
+}
