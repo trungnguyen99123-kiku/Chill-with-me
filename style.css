@@ -1,0 +1,52 @@
+body { 
+    /* Thêm ảnh nền pic.jfif */
+    background-image: url('pic.jfif');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    color: white; 
+    font-family: sans-serif; 
+    display: flex; 
+    justify-content: center; 
+    padding: 20px;
+    margin: 0;
+    height: 100vh;
+    align-items: center;
+}
+
+/* Style cho dòng Code by nằm ở góc trái màn hình */
+.credits-fixed {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    color: #1db954;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.container { 
+    width: 400px; 
+    /* Chỉnh lại background thành rgba để có độ trong suốt (0.9) */
+    background: rgba(24, 24, 24, 0.9); 
+    padding: 20px; 
+    border-radius: 15px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
+    backdrop-filter: blur(5px); /* Hiệu ứng mờ nền sau khung */
+}
+
+/* Các phần dưới đây giữ nguyên code cũ của ông */
+.tabs { display: flex; gap: 8px; margin-bottom: 20px; overflow-x: auto; scrollbar-width: none; }
+.tab-btn { padding: 8px 18px; border: none; border-radius: 20px; background: #282828; color: #b3b3b3; cursor: pointer; white-space: nowrap; font-weight: bold; }
+.tab-btn.active { background: #1db954; color: white; }
+.song { background: #282828; margin-bottom: 8px; padding: 12px; border-radius: 8px; cursor: pointer; }
+.song:hover { background: #3e3e3e; }
+
+.player { margin-top: 20px; border-top: 1px solid #333; padding-top: 15px; text-align: center; }
+#track-name { color: #1db954; font-size: 14px; margin-bottom: 10px; height: 18px; }
+.control-btn { background: #1db954; border: none; padding: 10px 30px; border-radius: 25px; color: white; font-weight: bold; cursor: pointer; }
+#volume-slider { width: 100px; accent-color: #1db954; margin-left: 10px; }

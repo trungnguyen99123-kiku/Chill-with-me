@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUSIC - Trung Nguyễn</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="credits-fixed">Code by: Trung Nguyễn</div>
+
+    <div class="container">
+        <h1>My Playlist</h1>
+        
+        <div class="tabs">
+            <button class="tab-btn active" onclick="showGenre('phonk', this)">Phonk</button>
+            <button class="tab-btn" onclick="showGenre('chill', this)">Chill</button>
+            <button class="tab-btn" onclick="showGenre('lofi', this)">Lofi</button>
+        </div>
+
+        <div id="music-list" style="max-height: 450px; overflow-y: auto;">
+            
+            <div class="genre-group phonk">
+                <div class="song" onclick="playSong('Ay Mi Gatito', 'ay mi gatito miau miau tiktok _ MONTAGEM MIAU Letra.mp3')"><strong>1. Ay Mi Gatito (Miau Miau)</strong></div>
+                <div class="song" onclick="playSong('Passo Bem Solto', 'ATLXS - PASSO BEM SOLTO SLOWED.mp3')"><strong>2. Passo Bem Solto</strong></div>
+                <div class="song" onclick="playSong('To Ma To Ma', 'AI T M T M AI T M HAI TRI TO REMIX _ MUSIC HOT TREND TIKTOK.mp3')"><strong>3. Tomato</strong></div>
+                <div class="song" onclick="playSong('Dia Delícia', 'DIA DELCIA Slowed.mp3')"><strong>4. Dia Delícia</strong></div>
+                <div class="song" onclick="playSong('Luna Bala', 'LUNA BALA Slowed.mp3')"><strong>5. Luna Bala</strong></div>
+                <div class="song" onclick="playSong('Montagem Rugada', 'MONTAGEM RUGADA.mp3')"><strong>6. Montagem Rugada</strong></div>
+                <div class="song" onclick="playSong('Montagem Xonada', 'MONTAGEM XONADA.mp3')"><strong>7. Montagem Xonada</strong></div>
+                <div class="song" onclick="playSong('No Batidão', 'NO BATIDO Extended.mp3')"><strong>8. No Batidão (Extended)</strong></div>
+                <div class="song" onclick="playSong('Esse Cara!', 'Sayfalse Scythermane TRXSHBXY - ESSE CARA_.mp3')"><strong>9. Esse Cara!</strong></div>
+                <div class="song" onclick="playSong('Sleeping City Funk', 'SLEEPING CITY FUNK.mp3')"><strong>10. Sleeping City Funk</strong></div>
+            </div>
+
+            <div class="genre-group chill" style="display:none">
+                <p style="text-align:center; color:#888; padding: 20px;">Dev lười chờ Dev nhé</p>
+            </div>
+
+            <div class="genre-group lofi" style="display:none">
+                <p style="text-align:center; color:#888; padding: 20px;">Dev lười chờ Dev nhé</p>
+            </div>
+        </div>
+
+        <div class="player">
+            <p id="track-name">Chọn nhạc đi...</p>
+            <audio id="audio-player"></audio> 
+            <div class="custom-controls">
+                <button class="control-btn" id="play-pause-btn" onclick="togglePlay()">Play</button>
+                <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="1" oninput="changeVolume(this.value)">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
