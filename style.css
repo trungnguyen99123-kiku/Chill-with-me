@@ -2,52 +2,38 @@ body {
     margin: 0; padding: 0; height: 100vh; display: flex;
     justify-content: center; align-items: center;
     background: url('pic.jfif') no-repeat center center fixed;
-    background-size: cover; font-family: 'Segoe UI', Tahoma, sans-serif; overflow: hidden;
+    background-size: cover; font-family: sans-serif; overflow: hidden;
 }
 
-.credits-fixed { position: fixed; top: 10px; left: 10px; color: white; font-weight: bold; z-index: 1001; }
-
-.bg-control {
-    position: fixed; top: 40px; left: 10px;
-    background: #ff69b4; color: white; padding: 6px 15px;
-    cursor: pointer; border-radius: 5px; font-weight: bold; z-index: 1000;
-    border: 1px solid white; transition: 0.3s;
-}
-.bg-control:hover { background: #ff1493; }
-
-.pink-title { color: #ff69b4; text-shadow: 0 0 10px rgba(255,105,180,0.5); font-size: 2.8em; margin: 0 0 20px 0; }
-
-.container {
-    background: rgba(0,0,0,0.8); padding: 25px; border-radius: 15px;
-    width: 420px; text-align: center; border: 1px solid #ff69b4;
-    backdrop-filter: blur(5px);
+/* HIỆU ỨNG HẠT LẤP LÁNH (MOUSE TRAIL) */
+.sparkle {
+    position: fixed;
+    pointer-events: none;
+    background: #ff69b4; /* Màu hường */
+    width: 6px;
+    height: 6px;
+    border-radius: 50%; /* Hình tròn nhỏ */
+    z-index: 9999;
+    animation: sparkleFade 0.6s linear forwards;
 }
 
-.tabs { display: flex; gap: 5px; margin-bottom: 15px; justify-content: center; flex-wrap: wrap; }
-.tab-btn { background: #333; color: white; border: none; padding: 7px 12px; cursor: pointer; border-radius: 5px; font-size: 13px; }
-.tab-btn.active { background: #ff69b4; }
+@keyframes sparkleFade {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0); }
+}
 
-#music-list { max-height: 320px; overflow-y: auto; margin-bottom: 15px; }
+.container { background: rgba(0,0,0,0.85); padding: 25px; border-radius: 15px; width: 420px; border: 2px solid #ff69b4; text-align: center; position: relative; z-index: 1; }
+.pink-title { color: #ff69b4; margin-bottom: 20px; text-shadow: 0 0 10px #ff69b4; }
+.tabs { display: flex; gap: 5px; margin-bottom: 15px; flex-wrap: wrap; justify-content: center; }
+.tab-btn { background: #333; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 5px; font-size: 13px; }
+.tab-btn.active { background: #ff69b4; font-weight: bold; }
+#music-list { max-height: 280px; overflow-y: auto; margin-bottom: 15px; }
 .song { padding: 12px; color: white; cursor: pointer; border-bottom: 1px solid #222; text-align: left; font-size: 14px; }
-.song:hover { background: rgba(255,105,180,0.2); }
-
-#track-name { color: #ffb6c1; margin-bottom: 10px; font-weight: bold; font-size: 15px; }
+.song:hover { background: rgba(255,105,180,0.2); color: #ffb6c1; }
+#track-name { color: #ffb6c1; font-weight: bold; margin-bottom: 10px; font-size: 13px; }
 .control-btn { background: #ff69b4; color: white; border: none; padding: 10px 25px; border-radius: 20px; cursor: pointer; font-weight: bold; }
-
-/* Chuột Bay Nhẹ Màu Hồng */
-.mouse-text {
-    position: fixed; pointer-events: none; color: #ffb6c1;
-    font-weight: bold; font-size: 14px; animation: fade 1.2s ease-out forwards; z-index: 9999;
-}
-@keyframes fade { 0% { opacity:1; transform:translateY(0); } 100% { opacity:0; transform:translateY(-50px); } }
-
-/* Panel Background */
-.bg-panel {
-    position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0);
-    background: rgba(0,0,0,0.95); padding: 20px; border: 2px solid #ff69b4; z-index: 2000; transition: 0.3s; border-radius: 15px;
-}
+.bg-control { position: fixed; top: 20px; left: 20px; background: #ff69b4; color: white; padding: 10px; border-radius: 5px; cursor: pointer; font-weight: bold; }
+.bg-panel { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0); background: black; padding: 20px; border: 2px solid #ff69b4; transition: 0.3s; z-index: 100; border-radius: 10px; }
 .bg-panel.active { transform: translate(-50%, -50%) scale(1); }
-.bg-options { display: flex; gap: 10px; }
-.bg-options img { width: 100px; height: 70px; cursor: pointer; border-radius: 5px; border: 1px solid transparent; object-fit: cover; }
-.bg-options img:hover { border-color: #ff69b4; }
-.back-btn { background: #555; color: white; border: none; padding: 8px 15px; border-radius: 10px; cursor: pointer; margin-top: 15px; }
+.bg-options img { width: 90px; height: 70px; margin: 5px; cursor: pointer; border-radius: 5px; object-fit: cover; }
+.credits-fixed { position: fixed; top: 20px; right: 20px; color: #006400; font-weight: bold; font-size: 14px; text-shadow: 1px 1px 2px rgba(255,255,255,0.8); }
