@@ -5,21 +5,33 @@ body {
     background-size: cover; font-family: sans-serif; overflow: hidden;
 }
 
-/* HIỆU ỨNG HẠT LẤP LÁNH (MOUSE TRAIL) */
-.sparkle {
+/* HIỆU ỨNG TRÁI TIM (MOUSE TRAIL) */
+.heart-trail {
     position: fixed;
     pointer-events: none;
-    background: #ff69b4; /* Màu hường */
-    width: 6px;
-    height: 6px;
-    border-radius: 50%; /* Hình tròn nhỏ */
+    color: #ff69b4; /* Màu hồng */
+    font-size: 15px;
     z-index: 9999;
-    animation: sparkleFade 0.6s linear forwards;
+    animation: heartFade 0.8s linear forwards;
 }
 
-@keyframes sparkleFade {
-    0% { opacity: 1; transform: scale(1); }
-    100% { opacity: 0; transform: scale(0); }
+@keyframes heartFade {
+    0% { opacity: 1; transform: scale(1) translateY(0); }
+    100% { opacity: 0; transform: scale(1.5) translateY(-20px); }
+}
+
+/* THANH VOLUME */
+.volume-container {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+input[type=range] {
+    accent-color: #ff69b4; /* Đổi màu thanh kéo sang hồng */
+    cursor: pointer;
+    width: 120px;
 }
 
 .container { background: rgba(0,0,0,0.85); padding: 25px; border-radius: 15px; width: 420px; border: 2px solid #ff69b4; text-align: center; position: relative; z-index: 1; }

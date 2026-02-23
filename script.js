@@ -1,23 +1,29 @@
-// HIỆU ỨNG MOUSE TRAIL (HẠT LẤP LÁNH)
+// HIỆU ỨNG TRÁI TIM CHẠY THEO CHUỘT
 document.addEventListener('mousemove', (e) => {
-    const sparkle = document.createElement('div');
-    sparkle.className = 'sparkle';
+    const heart = document.createElement('div');
+    heart.className = 'heart-trail';
+    heart.innerHTML = '❤'; // Biểu tượng trái tim
     
-    // Đặt hạt chính xác tại đầu con trỏ
-    sparkle.style.left = e.clientX + 'px';
-    sparkle.style.top = e.clientY + 'px';
+    heart.style.left = e.clientX + 'px';
+    heart.style.top = e.clientY + 'px';
     
-    // Tạo kích thước ngẫu nhiên cho hạt nhìn cho đẹp
-    const size = Math.random() * 8 + 2 + 'px';
-    sparkle.style.width = size;
-    sparkle.style.height = size;
+    // Ngẫu nhiên kích thước trái tim
+    const size = Math.random() * 15 + 10 + 'px';
+    heart.style.fontSize = size;
 
-    document.body.appendChild(sparkle);
+    document.body.appendChild(heart);
     
     setTimeout(() => {
-        sparkle.remove();
-    }, 600);
+        heart.remove();
+    }, 800);
 });
+
+// HÀM ĐIỀU CHỈNH ÂM LƯỢNG
+function changeVolume() {
+    let player = document.getElementById('audio-player');
+    let slider = document.getElementById('volume-slider');
+    player.volume = slider.value;
+}
 
 function showGenre(genre, btn) {
     document.querySelectorAll('.genre-group').forEach(g => g.style.display = 'none');
@@ -32,6 +38,10 @@ function playSong(name, file) {
     let label = document.getElementById('track-name');
     player.src = encodeURI(file);
     label.innerText = "🎵 Đang phát: " + name;
+    
+    // Đảm bảo bài mới vẫn giữ nguyên âm lượng từ thanh kéo
+    player.volume = document.getElementById('volume-slider').value;
+    
     player.play().catch(e => console.error("Lỗi file:", file));
     document.getElementById('play-pause-btn').innerText = "Pause";
 }
