@@ -1,46 +1,50 @@
-function showGenre(genreName, element) {
-    var groups = document.getElementsByClassName('genre-group');
-    for (var i = 0; i < groups.length; i++) { 
-        groups[i].style.display = 'none'; 
-    }
-    document.querySelector('.' + genreName).style.display = 'block';
+function showGenre(genre, btn) {
+    let groups = document.querySelectorAll('.genre-group');
+    groups.forEach(g => g.style.display = 'none');
+    document.querySelector('.' + genre).style.display = 'block';
     
-    var buttons = document.getElementsByClassName('tab-btn');
-    for (var i = 0; i < buttons.length; i++) { 
-        buttons[i].classList.remove('active'); 
-    }
-    element.classList.add('active');
+    let btns = document.querySelectorAll('.tab-btn');
+    btns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
 }
 
-function playSong(name, filename) {
-    var player = document.getElementById('audio-player');
-    var label = document.getElementById('track-name');
-    var btn = document.getElementById('play-pause-btn');
+function playSong(name, file) {
+    let player = document.getElementById('audio-player');
+    let label = document.getElementById('track-name');
+    let btn = document.getElementById('play-pause-btn');
     
-    player.src = filename;
-    label.innerText = "🎵 Đang phát: " + name;
-    
-    player.play().then(() => {
-        btn.innerText = "Pause";
-    }).catch(e => {
-        alert("Lỗi: Không tìm thấy file '" + filename + "'. Nhớ bỏ file vào cùng thư mục code nhé!");
-    });
+    player.src = file;
+    label.innerText = "🎵 Đang phát nhạc: " + name;
+    player.play();
+    btn.innerText = "Pause";
 }
 
 function togglePlay() {
-    var player = document.getElementById('audio-player');
-    var btn = document.getElementById('play-pause-btn');
+    let player = document.getElementById('audio-player');
+    let btn = document.getElementById('play-pause-btn');
     if (!player.src) return;
-    if (player.paused) { 
-        player.play(); 
-        btn.innerText = "Pause"; 
-    } else { 
-        player.pause(); 
-        btn.innerText = "Play"; 
-    }
+    if (player.paused) { player.play(); btn.innerText = "Pause"; }
+    else { player.pause(); btn.innerText = "Play"; }
 }
 
-function changeVolume(val) {
-    var player = document.getElementById('audio-player');
-    player.volume = val;
+function toggleBGPanel() { document.getElementById('bg-panel').classList.toggle('active'); }
+
+function changeBG(img) { 
+    document.body.style.backgroundImage = `url('${img}')`; 
+    toggleBGPanel(); 
 }
+
+function changeVolume(v) { document.getElementById('audio-player').volume = v; }
+
+// Hiệu ứng chuột nhẹ nhàng
+document.addEventListener('mousemove', (e) => {
+    if (Math.random() > 0.93) {
+        let s = document.createElement('span');
+        s.className = 'mouse-text';
+        s.innerText = 'I LOVE YOU';
+        s.style.left = e.clientX + 'px';
+        s.style.top = e.clientY + 'px';
+        document.body.appendChild(s);
+        setTimeout(() => s.remove(), 1200);
+    }
+});

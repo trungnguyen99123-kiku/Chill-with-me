@@ -1,65 +1,52 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: url('pic.jfif'); 
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+    margin: 0; padding: 0; height: 100vh; display: flex;
+    justify-content: center; align-items: center;
+    background: url('pic.jfif') no-repeat center center fixed;
+    background-size: cover; font-family: 'Segoe UI', sans-serif; overflow: hidden;
 }
 
-.credits-fixed {
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    color: #1db954;
-    font-weight: bold;
-    font-size: 14px;
-    text-transform: uppercase;
-    z-index: 9999;
+.credits-fixed { position: fixed; top: 10px; left: 10px; color: white; font-weight: bold; z-index: 1001; }
+
+.bg-control {
+    position: fixed; top: 40px; left: 10px;
+    background: #ff69b4; color: white; padding: 6px 15px;
+    cursor: pointer; border-radius: 5px; font-weight: bold; z-index: 1000;
+    border: 1px solid white; transition: 0.3s;
 }
+.bg-control:hover { background: #ff1493; box-shadow: 0 0 10px #ff69b4; }
+
+.pink-title { color: #ff69b4; text-shadow: 0 0 10px rgba(255,105,180,0.5); font-size: 2.8em; margin: 0 0 20px 0; }
 
 .container {
-    background-color: rgba(0, 0, 0, 0.85); 
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    width: 400px;
-    text-align: center;
-    backdrop-filter: blur(8px);
+    background: rgba(0,0,0,0.8); padding: 25px; border-radius: 15px;
+    width: 420px; text-align: center; border: 1px solid #ff69b4;
+    backdrop-filter: blur(5px);
 }
 
-h1 { color: #1db954; margin-bottom: 20px; }
+.tabs { display: flex; gap: 5px; margin-bottom: 15px; justify-content: center; flex-wrap: wrap; }
+.tab-btn { background: #333; color: white; border: none; padding: 7px 12px; cursor: pointer; border-radius: 5px; transition: 0.3s; }
+.tab-btn.active { background: #ff69b4; color: white; }
 
-.tabs { display: flex; justify-content: space-around; margin-bottom: 20px; }
+#music-list { max-height: 320px; overflow-y: auto; margin-bottom: 15px; }
+.song { padding: 12px; color: white; cursor: pointer; border-bottom: 1px solid #222; text-align: left; transition: 0.2s; }
+.song:hover { background: rgba(255,105,180,0.2); transform: translateX(5px); }
 
-.tab-btn {
-    background: #333; color: white; border: none; padding: 10px 20px;
-    border-radius: 20px; cursor: pointer; transition: 0.3s;
+#track-name { color: #ffb6c1; margin-bottom: 10px; font-weight: bold; font-size: 15px; }
+.control-btn { background: #ff69b4; color: white; border: none; padding: 10px 25px; border-radius: 20px; cursor: pointer; font-weight: bold; }
+
+.mouse-text {
+    position: fixed; pointer-events: none; color: #ffb6c1;
+    font-weight: bold; font-size: 14px; animation: fade 1.2s ease-out forwards; z-index: 9999;
+    text-shadow: 0 0 5px #ff69b4;
 }
+@keyframes fade { 0% { opacity:1; transform:translateY(0); } 100% { opacity:0; transform:translateY(-50px); } }
 
-.tab-btn.active, .tab-btn:hover { background: #1db954; }
-
-.song {
-    background: rgba(34, 34, 34, 0.6); 
-    margin: 10px 0; padding: 12px;
-    border-radius: 8px; cursor: pointer; transition: 0.2s;
-    color: white; text-align: left;
+.bg-panel {
+    position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0);
+    background: rgba(0,0,0,0.95); padding: 20px; border: 2px solid #ff69b4; z-index: 2000; transition: 0.3s; border-radius: 15px;
 }
-
-.song:hover { background: #333; transform: scale(1.02); }
-
-.player { margin-top: 20px; padding-top: 20px; border-top: 1px solid #444; }
-
-#track-name { color: #1db954; font-weight: bold; margin-bottom: 15px; height: 20px; }
-
-.control-btn {
-    background: #1db954; border: none; padding: 10px 25px;
-    border-radius: 20px; color: white; cursor: pointer; font-weight: bold;
-}
-
-input[type="range"] { width: 100%; margin-top: 15px; accent-color: #1db954; }
+.bg-panel.active { transform: translate(-50%, -50%) scale(1); }
+.bg-options { display: flex; gap: 10px; }
+.bg-options img { width: 100px; height: 70px; cursor: pointer; border-radius: 5px; border: 2px solid transparent; object-fit: cover; }
+.bg-options img:hover { border-color: #ff69b4; }
+.back-btn { background: #555; color: white; border: none; padding: 8px 15px; border-radius: 10px; cursor: pointer; margin-top: 15px; }

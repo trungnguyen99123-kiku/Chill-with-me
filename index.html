@@ -8,9 +8,21 @@
 </head>
 <body>
     <div class="credits-fixed">Code by: Trung Nguyễn</div>
+    <div class="bg-control" onclick="toggleBGPanel()">BACKGROUND</div>
+
+    <div id="bg-panel" class="bg-panel">
+        <h3>CHỌN NỀN</h3>
+        <div class="bg-options">
+            <img src="pic.jfif" onclick="changeBG('pic.jfif')" alt="Nền Gốc">
+            <img src="anh1.jpg" onclick="changeBG('download (1).jfif')" alt="Anime 1">
+            <img src="anh2.jpg" onclick="changeBG('download (2).jfif')" alt="Anime 2">
+            <img src="anh2.jpg" onclick="changeBG('images.jfif')" alt="Anime 2">
+        </div>
+        <button class="back-btn" onclick="toggleBGPanel()">Quay Lại</button>
+    </div>
 
     <div class="container">
-        <h1>My Playlist</h1>
+        <h1 class="pink-title">MY PLAYLIST</h1>
         
         <div class="tabs">
             <button class="tab-btn active" onclick="showGenre('phonk', this)">Phonk</button>
@@ -20,64 +32,55 @@
             <button class="tab-btn" onclick="showGenre('kim', this)">Kim♥</button>
         </div>
 
-        <div id="music-list" style="max-height: 400px; overflow-y: auto;">
-            
+        <div id="music-list">
             <div class="genre-group phonk">
-                <div class="song" onclick="playSong('Ay Mi Gatito', 'ay mi gatito miau miau tiktok _ MONTAGEM MIAU Letra.mp3')"><strong>1. Ay Mi Gatito</strong></div>
-                <div class="song" onclick="playSong('Passo Bem Solto', 'ATLXS - PASSO BEM SOLTO SLOWED.mp3')"><strong>2. Passo Bem Solto</strong></div>
-                <div class="song" onclick="playSong('Tomato', 'AI T M T M AI T M HAI TRI TO REMIX _ MUSIC HOT TREND TIKTOK.mp3')"><strong>3. Tomato</strong></div>
-                <div class="song" onclick="playSong('Dia Delícia', 'DIA DELCIA Slowed.mp3')"><strong>4. Dia Delícia</strong></div>
-                <div class="song" onclick="playSong('Luna Bala', 'LUNA BALA Slowed.mp3')"><strong>5. Luna Bala</strong></div>
-                <div class="song" onclick="playSong('Montagem Rugada', 'MONTAGEM RUGADA.mp3')"><strong>6. Montagem Rugada</strong></div>
-                <div class="song" onclick="playSong('Montagem Xonada', 'MONTAGEM XONADA.mp3')"><strong>7. Montagem Xonada</strong></div>
-                <div class="song" onclick="playSong('No Batidão', 'NO BATIDO Extended.mp3')"><strong>8. No Batidão</strong></div>
-                <div class="song" onclick="playSong('Esse Cara!', 'Sayfalse Scythermane TRXSHBXY - ESSE CARA_.mp3')"><strong>9. Esse Cara!</strong></div>
-                <div class="song" onclick="playSong('Sleeping City Funk', 'SLEEPING CITY FUNK.mp3')"><strong>10. Sleeping City Funk</strong></div>
+                <div class="song" onclick="playSong('Ay Mi Gatito', 'ay mi gatito miau miau tiktok _ MONTAGEM MIAU Letra.mp3')">1. Ay Mi Gatito</div>
+                <div class="song" onclick="playSong('Passo Bem Solto', 'ATLXS - PASSO BEM SOLTO SLOWED.mp3')">2. Passo Bem Solto</div>
+                <div class="song" onclick="playSong('Tomato', 'AI T M T M AI T M HAI TRI TO REMIX _ MUSIC HOT TREND TIKTOK.mp3')">3. Tomato</div>
+                <div class="song" onclick="playSong('Dia Delícia', 'DIA DELCIA Slowed.mp3')">4. Dia Delícia</div>
+                <div class="song" onclick="playSong('Luna Bala', 'LUNA BALA Slowed.mp3')">5. Luna Bala</div>
+                <div class="song" onclick="playSong('Montagem Rugada', 'MONTAGEM RUGADA.mp3')">6. Montagem Rugada</div>
+                <div class="song" onclick="playSong('Montagem Xonada', 'MONTAGEM XONADA.mp3')">7. Montagem Xonada</div>
+                <div class="song" onclick="playSong('No Batidão', 'NO BATIDO Extended.mp3')">8. No Batidão</div>
+                <div class="song" onclick="playSong('Esse Cara!', 'Sayfalse Scythermane TRXSHBXY - ESSE CARA_.mp3')">9. Esse Cara!</div>
+                <div class="song" onclick="playSong('Sleeping City Funk', 'SLEEPING CITY FUNK.mp3')">10. Sleeping City Funk</div>
             </div>
 
             <div class="genre-group chill" style="display:none">
-                <div class="song" onclick="playSong('Internet Love', 'Internet Love.mp3')"><strong>1. Internet Love</strong></div>
-                <div class="song" onclick="playSong('Phố Không Em', 'Phố Không Em.mp3')"><strong>2. Phố Không Em</strong></div>
-                <div class="song" onclick="playSong('Chúng Ta Sau Này', 'Chúng Ta Sau Này.mp3')"><strong>3. Chúng Ta Sau Này</strong></div>
-                <div class="song" onclick="playSong('Dễ Đến Dễ Đi', 'Dễ Đến Dễ Đi.mp3')"><strong>4. Dễ Đến Dễ Đi</strong></div>
-                <div class="song" onclick="playSong('151 Radio Mashup', '151 Radio - Session 2_ 151 mashup - Happy New Year 2021.mp3')"><strong>5. 151 Radio Mashup</strong></div>
-                <div class="song" onclick="playSong('VSTRA - Internet Love', 'VSTRA - Internet Love ft Tyronee _ Official M_V.mp3')"><strong>6. Internet Love (VSTRA)</strong></div>
-                <div class="song" onclick="playSong('Em Làm Gì Mùa Dịch', 'Em Làm Gì Mùa Dịch _.mp3')"><strong>7. Em Làm Gì Mùa Dịch</strong></div>
-                <div class="song" onclick="playSong('Nấu Ăn Cho Em', 'Nu n cho em - Lyrics - EN VU  PiaLinh nauanchoem denvau pialinh.mp3')"><strong>8. Nấu Ăn Cho Em</strong></div>
-                <div class="song" onclick="playSong('Phải Chăng Em Đã Yêu', 'Phải Chăng Em Đã Yêu_.mp3')"><strong>9. Phải Chăng Em Đã Yêu</strong></div>
-                <div class="song" onclick="playSong('Sinh Ra Đã Đối Lập', 'Sinh Ra Đã Là Thứ Đối Lập Nhau.mp3')"><strong>10. Sinh Ra Đã Đối Lập</strong></div>
+                <div class="song" onclick="playSong('Internet Love', 'Internet Love.mp3')">1. Internet Love</div>
+                <div class="song" onclick="playSong('Phố Không Em', 'Phố Không Em.mp3')">2. Phố Không Em</div>
+                <div class="song" onclick="playSong('Chúng Ta Sau Này', 'Chúng Ta Sau Này.mp3')">3. Chúng Ta Sau Này</div>
+                <div class="song" onclick="playSong('Dễ Đến Dễ Đi', 'Dễ Đến Dễ Đi.mp3')">4. Dễ Đến Dễ Đi</div>
+                <div class="song" onclick="playSong('151 Radio Mashup', '151 Radio - Session 2_ 151 mashup - Happy New Year 2021.mp3')">5. 151 Radio Mashup</div>
+                <div class="song" onclick="playSong('Em Làm Gì Mùa Dịch', 'Em Làm Gì Mùa Dịch _.mp3')">6. Em Làm Gì Mùa Dịch</div>
+                <div class="song" onclick="playSong('Nấu Ăn Cho Em', 'Nu n cho em - Lyrics - EN VU  PiaLinh nauanchoem denvau pialinh.mp3')">7. Nấu Ăn Cho Em</div>
+                <div class="song" onclick="playSong('Phải Chăng Em Đã Yêu', 'Phải Chăng Em Đã Yêu_.mp3')">8. Phải Chăng Em Đã Yêu</div>
             </div>
 
             <div class="genre-group love" style="display:none">
-                <div class="song" onclick="playSong('Tình Yêu Xanh Lá', 'Tình Yêu Xanh Lá (juju).mp3')"><strong>1. Tình Yêu Xanh Lá</strong></div>
-                <div class="song" onclick="playSong('Tình Đầu Quá Chén', 'Tnh u Qu Chn - Quang Hng MasterD _ Kem YNA Cover.mp3')"><strong>2. Tình Đầu Quá Chén</strong></div>
-                <div class="song" onclick="playSong('Thủy Triều', 'Thu Triu _ Quang Hng MasterD _ - Hng Ly Cover - Nhm mt li hn vo tai .mp3')"><strong>3. Thủy Triều</strong></div>
-                <div class="song" onclick="playSong('Đừng Làm Trái Tim Anh Đau', 'ng Lm Tri Tim Anh au - Sn Tng MTP _ Lyrics Video _.mp3')"><strong>4. Đừng Làm Trái Tim Anh Đau</strong></div>
-                <div class="song" onclick="playSong('Lệ Lưu Ly', 'L LU LY  NH4T Remix  - V PHNG TIN X DT TP RAP X DRUM7 _ Audio Lyrics Video.mp3')"><strong>5. Lệ Lưu Ly</strong></div>
-                <div class="song" onclick="playSong('Khóa Ly Biệt', 'KHA LY BIT Ngn Ngn Cover _ Composer ng Thin c - Tri lm gi x cnh chim Quyn.mp3')"><strong>6. Khóa Ly Biệt</strong></div>
-                <div class="song" onclick="playSong('Nấu Ăn Cho Em', 'Nu n cho em - Lyrics - EN VU  PiaLinh nauanchoem denvau pialinh.mp3')"><strong>7. Nấu Ăn Cho Em</strong></div>
-                <div class="song" onclick="playSong('Thiên Lý Ơi', 'JACK - J97 _ THIN L I _ Official Music Video.mp3')"><strong>8. Thiên Lý Ơi</strong></div>
-                <div class="song" onclick="playSong('Đối Lập Nhau', 'Sinh Ra Đã Là Thứ Đối Lập Nhau.mp3')"><strong>9. Đối Lập Nhau</strong></div>
-                <div class="song" onclick="playSong('Phải Chăng Em Đã Yêu', 'Phải Chăng Em Đã Yêu_.mp3')"><strong>10. Phải Chăng Em Đã Yêu</strong></div>
+                <div class="song" onclick="playSong('Tình Yêu Xanh Lá', 'Tình Yêu Xanh Lá (juju).mp3')">1. Tình Yêu Xanh Lá</div>
+                <div class="song" onclick="playSong('Tình Đầu Quá Chén', 'Tnh u Qu Chn - Quang Hng MasterD _ Kem YNA Cover.mp3')">2. Tình Đầu Quá Chén</div>
+                <div class="song" onclick="playSong('Thủy Triều', 'Thu Triu _ Quang Hng MasterD _ - Hng Ly Cover.mp3')">3. Thủy Triều</div>
+                <div class="song" onclick="playSong('Đừng Làm Trái Tim Anh Đau', 'ng Lm Tri Tim Anh au - Sn Tng MTP.mp3')">4. Đừng Làm Trái Tim Anh Đau</div>
             </div>
 
             <div class="genre-group tre" style="display:none">
-                <div class="song" onclick="playSong('Pin Dự Phòng', 'Dng Domic ft Lou Hong - Pin D Phng _ EP D Liu Qu.mp3')"><strong>1. Pin Dự Phòng - Dương Domic</strong></div>
-                <div class="song" onclick="playSong('Thiên Lý Ơi', 'JACK - J97 _ THIN L I _ Official Music Video.mp3')"><strong>2. Thiên Lý Ơi - Jack</strong></div>
-                <div class="song" onclick="playSong('APT.', 'ROSE  Bruno Mars - APT Official Music Video.mp3')"><strong>3. APT. - Rosé & Bruno Mars</strong></div>
-                <div class="song" onclick="playSong('Montagem UI UI UI', 'MIRAGEM - MONTAGEM UI UI UI - KYON  SALSA Official Music Visualizer.mp3')"><strong>4. Montagem UI UI UI</strong></div>
-                <div class="song" onclick="playSong('Ai Đưa Em Về', 'TIA - Ai a Em V _ Official M_V _ Ft L Thin Hiu Low Cortisol Song.mp3')"><strong>5. Ai Đưa Em Về - TIA</strong></div>
+                <div class="song" onclick="playSong('Pin Dự Phòng', 'Dng Domic ft Lou Hong - Pin D Phng _ EP D Liu Qu.mp3')">1. Pin Dự Phòng - Dương Domic</div>
+                <div class="song" onclick="playSong('Thiên Lý Ơi', 'JACK - J97 _ THIN L I _ Official Music Video.mp3')">2. Thiên Lý Ơi - Jack</div>
+                <div class="song" onclick="playSong('APT.', 'ROSE  Bruno Mars - APT Official Music Video.mp3')">3. APT. - Rosé</div>
+                <div class="song" onclick="playSong('Montagem UI UI UI', 'MIRAGEM - MONTAGEM UI UI UI.mp3')">4. Montagem UI UI UI</div>
+                <div class="song" onclick="playSong('Ai Đưa Em Về', 'TIA - Ai a Em V.mp3')">5. Ai Đưa Em Về</div>
             </div>
 
             <div class="genre-group kim" style="display:none">
-                <div class="song" onclick="playSong('Mất Kết Nối', 'Dng Domic - Mt Kt Ni _ EP D Liu Qu.mp3')"><strong>1. Mất Kết Nối - Dương Domic</strong></div>
+                <div class="song" onclick="playSong('Mất Kết Nối', 'Dng Domic - Mt Kt Ni _ EP D Liu Qu.mp3')">1. Mất Kết Nối - Dương Domic</div>
             </div>
         </div>
 
         <div class="player">
             <p id="track-name">Chọn nhạc đi...</p>
             <audio id="audio-player"></audio> 
-            <div class="custom-controls">
+            <div class="controls-row">
                 <button class="control-btn" id="play-pause-btn" onclick="togglePlay()">Play</button>
                 <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="1" oninput="changeVolume(this.value)">
             </div>
