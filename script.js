@@ -14,7 +14,7 @@ function playSong(name, file) {
     let btn = document.getElementById('play-pause-btn');
     
     player.src = file;
-    label.innerText = "🎵 Đang phát nhạc: " + name;
+    label.innerText = "🎵 Đang phát nhạc: " + name; // Câu thông báo chuẩn
     player.play();
     btn.innerText = "Pause";
 }
@@ -30,7 +30,7 @@ function togglePlay() {
 function toggleBGPanel() { document.getElementById('bg-panel').classList.toggle('active'); }
 
 function changeBG(img) { 
-    document.body.style.backgroundImage = `url('${img}')`; 
+    document.body.style.backgroundImage = "url('" + img + "')"; 
     toggleBGPanel(); 
 }
 
@@ -38,7 +38,7 @@ function changeVolume(v) { document.getElementById('audio-player').volume = v; }
 
 // Hiệu ứng chuột nhẹ nhàng
 document.addEventListener('mousemove', (e) => {
-    if (Math.random() > 0.93) {
+    if (Math.random() > 0.94) {
         let s = document.createElement('span');
         s.className = 'mouse-text';
         s.innerText = 'I LOVE YOU';

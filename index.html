@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MY PLAYLIST</title>
+    <title>MUSIC - Trung Nguyễn</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="credits-fixed">Code by: Trung Nguyễn</div>
+    
     <div class="bg-control" onclick="toggleBGPanel()">BACKGROUND</div>
 
     <div id="bg-panel" class="bg-panel">
         <h3>CHỌN NỀN</h3>
         <div class="bg-options">
-            <img src="pic.jfif" onclick="changeBG('pic.jfif')" alt="Nền Gốc">
-            <img src="anh1.jpg" onclick="changeBG('download (1).jfif')" alt="Anime 1">
-            <img src="anh2.jpg" onclick="changeBG('download (2).jfif')" alt="Anime 2">
-            <img src="anh2.jpg" onclick="changeBG('images.jfif')" alt="Anime 2">
+            <img src="pic.jfif" onclick="changeBG('pic.jfif')" title="Gốc">
+            <img src="anh1.jpg" onclick="changeBG('anh1.jpg')" title="Anime 1">
+            <img src="anh2.jpg" onclick="changeBG('anh2.jpg')" title="Anime 2">
         </div>
         <button class="back-btn" onclick="toggleBGPanel()">Quay Lại</button>
     </div>
@@ -52,9 +52,11 @@
                 <div class="song" onclick="playSong('Chúng Ta Sau Này', 'Chúng Ta Sau Này.mp3')">3. Chúng Ta Sau Này</div>
                 <div class="song" onclick="playSong('Dễ Đến Dễ Đi', 'Dễ Đến Dễ Đi.mp3')">4. Dễ Đến Dễ Đi</div>
                 <div class="song" onclick="playSong('151 Radio Mashup', '151 Radio - Session 2_ 151 mashup - Happy New Year 2021.mp3')">5. 151 Radio Mashup</div>
-                <div class="song" onclick="playSong('Em Làm Gì Mùa Dịch', 'Em Làm Gì Mùa Dịch _.mp3')">6. Em Làm Gì Mùa Dịch</div>
-                <div class="song" onclick="playSong('Nấu Ăn Cho Em', 'Nu n cho em - Lyrics - EN VU  PiaLinh nauanchoem denvau pialinh.mp3')">7. Nấu Ăn Cho Em</div>
-                <div class="song" onclick="playSong('Phải Chăng Em Đã Yêu', 'Phải Chăng Em Đã Yêu_.mp3')">8. Phải Chăng Em Đã Yêu</div>
+                <div class="song" onclick="playSong('VSTRA - Internet Love', 'VSTRA - Internet Love ft Tyronee _ Official M_V.mp3')">6. Internet Love (VSTRA)</div>
+                <div class="song" onclick="playSong('Em Làm Gì Mùa Dịch', 'Em Làm Gì Mùa Dịch _.mp3')">7. Em Làm Gì Mùa Dịch</div>
+                <div class="song" onclick="playSong('Nấu Ăn Cho Em', 'Nu n cho em - Lyrics - EN VU  PiaLinh nauanchoem denvau pialinh.mp3')">8. Nấu Ăn Cho Em</div>
+                <div class="song" onclick="playSong('Phải Chăng Em Đã Yêu', 'Phải Chăng Em Đã Yêu_.mp3')">9. Phải Chăng Em Đã Yêu</div>
+                <div class="song" onclick="playSong('Sinh Ra Đã Đối Lập', 'Sinh Ra Đã Là Thứ Đối Lập Nhau.mp3')">10. Sinh Ra Đã Đối Lập</div>
             </div>
 
             <div class="genre-group love" style="display:none">
@@ -62,14 +64,15 @@
                 <div class="song" onclick="playSong('Tình Đầu Quá Chén', 'Tnh u Qu Chn - Quang Hng MasterD _ Kem YNA Cover.mp3')">2. Tình Đầu Quá Chén</div>
                 <div class="song" onclick="playSong('Thủy Triều', 'Thu Triu _ Quang Hng MasterD _ - Hng Ly Cover.mp3')">3. Thủy Triều</div>
                 <div class="song" onclick="playSong('Đừng Làm Trái Tim Anh Đau', 'ng Lm Tri Tim Anh au - Sn Tng MTP.mp3')">4. Đừng Làm Trái Tim Anh Đau</div>
+                <div class="song" onclick="playSong('Lệ Lưu Ly', 'L LU LY  NH4T Remix  - V PHNG TIN X DT TP RAP X DRUM7.mp3')">5. Lệ Lưu Ly</div>
             </div>
 
             <div class="genre-group tre" style="display:none">
-                <div class="song" onclick="playSong('Pin Dự Phòng', 'Dng Domic ft Lou Hong - Pin D Phng _ EP D Liu Qu.mp3')">1. Pin Dự Phòng - Dương Domic</div>
-                <div class="song" onclick="playSong('Thiên Lý Ơi', 'JACK - J97 _ THIN L I _ Official Music Video.mp3')">2. Thiên Lý Ơi - Jack</div>
-                <div class="song" onclick="playSong('APT.', 'ROSE  Bruno Mars - APT Official Music Video.mp3')">3. APT. - Rosé</div>
+                <div class="song" onclick="playSong('Pin Dự Phòng', 'Dng Domic ft Lou Hong - Pin D Phng _ EP D Liu Qu.mp3')">1. Pin Dự Phòng</div>
+                <div class="song" onclick="playSong('Thiên Lý Ơi', 'JACK - J97 _ THIN L I _ Official Music Video.mp3')">2. Thiên Lý Ơi</div>
+                <div class="song" onclick="playSong('APT.', 'ROSE  Bruno Mars - APT Official Music Video.mp3')">3. APT.</div>
                 <div class="song" onclick="playSong('Montagem UI UI UI', 'MIRAGEM - MONTAGEM UI UI UI.mp3')">4. Montagem UI UI UI</div>
-                <div class="song" onclick="playSong('Ai Đưa Em Về', 'TIA - Ai a Em V.mp3')">5. Ai Đưa Em Về</div>
+                <div class="song" onclick="playSong('Ai Đưa Em Về', 'TIA - Ai a Em V _ Official M_V _ Ft L Thin Hiu Low Cortisol Song.mp3')">5. Ai Đưa Em Về</div>
             </div>
 
             <div class="genre-group kim" style="display:none">

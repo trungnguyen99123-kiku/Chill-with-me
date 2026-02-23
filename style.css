@@ -2,7 +2,7 @@ body {
     margin: 0; padding: 0; height: 100vh; display: flex;
     justify-content: center; align-items: center;
     background: url('pic.jfif') no-repeat center center fixed;
-    background-size: cover; font-family: 'Segoe UI', sans-serif; overflow: hidden;
+    background-size: cover; font-family: 'Segoe UI', Tahoma, sans-serif; overflow: hidden;
 }
 
 .credits-fixed { position: fixed; top: 10px; left: 10px; color: white; font-weight: bold; z-index: 1001; }
@@ -13,7 +13,7 @@ body {
     cursor: pointer; border-radius: 5px; font-weight: bold; z-index: 1000;
     border: 1px solid white; transition: 0.3s;
 }
-.bg-control:hover { background: #ff1493; box-shadow: 0 0 10px #ff69b4; }
+.bg-control:hover { background: #ff1493; }
 
 .pink-title { color: #ff69b4; text-shadow: 0 0 10px rgba(255,105,180,0.5); font-size: 2.8em; margin: 0 0 20px 0; }
 
@@ -24,29 +24,30 @@ body {
 }
 
 .tabs { display: flex; gap: 5px; margin-bottom: 15px; justify-content: center; flex-wrap: wrap; }
-.tab-btn { background: #333; color: white; border: none; padding: 7px 12px; cursor: pointer; border-radius: 5px; transition: 0.3s; }
-.tab-btn.active { background: #ff69b4; color: white; }
+.tab-btn { background: #333; color: white; border: none; padding: 7px 12px; cursor: pointer; border-radius: 5px; font-size: 13px; }
+.tab-btn.active { background: #ff69b4; }
 
 #music-list { max-height: 320px; overflow-y: auto; margin-bottom: 15px; }
-.song { padding: 12px; color: white; cursor: pointer; border-bottom: 1px solid #222; text-align: left; transition: 0.2s; }
-.song:hover { background: rgba(255,105,180,0.2); transform: translateX(5px); }
+.song { padding: 12px; color: white; cursor: pointer; border-bottom: 1px solid #222; text-align: left; font-size: 14px; }
+.song:hover { background: rgba(255,105,180,0.2); }
 
 #track-name { color: #ffb6c1; margin-bottom: 10px; font-weight: bold; font-size: 15px; }
 .control-btn { background: #ff69b4; color: white; border: none; padding: 10px 25px; border-radius: 20px; cursor: pointer; font-weight: bold; }
 
+/* Chuột Bay Nhẹ Màu Hồng */
 .mouse-text {
     position: fixed; pointer-events: none; color: #ffb6c1;
     font-weight: bold; font-size: 14px; animation: fade 1.2s ease-out forwards; z-index: 9999;
-    text-shadow: 0 0 5px #ff69b4;
 }
 @keyframes fade { 0% { opacity:1; transform:translateY(0); } 100% { opacity:0; transform:translateY(-50px); } }
 
+/* Panel Background */
 .bg-panel {
     position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0);
     background: rgba(0,0,0,0.95); padding: 20px; border: 2px solid #ff69b4; z-index: 2000; transition: 0.3s; border-radius: 15px;
 }
 .bg-panel.active { transform: translate(-50%, -50%) scale(1); }
 .bg-options { display: flex; gap: 10px; }
-.bg-options img { width: 100px; height: 70px; cursor: pointer; border-radius: 5px; border: 2px solid transparent; object-fit: cover; }
+.bg-options img { width: 100px; height: 70px; cursor: pointer; border-radius: 5px; border: 1px solid transparent; object-fit: cover; }
 .bg-options img:hover { border-color: #ff69b4; }
 .back-btn { background: #555; color: white; border: none; padding: 8px 15px; border-radius: 10px; cursor: pointer; margin-top: 15px; }
