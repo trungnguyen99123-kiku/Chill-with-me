@@ -5,22 +5,22 @@ body {
     background-size: cover; font-family: sans-serif; overflow: hidden;
 }
 
-/* HIỆU ỨNG TRÁI TIM (MOUSE TRAIL) */
+/* HIỆU ỨNG TRÁI TIM BAY */
 .heart-trail {
     position: fixed;
     pointer-events: none;
-    color: #ff69b4; /* Màu hồng */
-    font-size: 15px;
+    color: #ff69b4;
     z-index: 9999;
-    animation: heartFade 0.8s linear forwards;
+    user-select: none;
+    animation: heartFly 0.8s linear forwards;
 }
 
-@keyframes heartFade {
+@keyframes heartFly {
     0% { opacity: 1; transform: scale(1) translateY(0); }
-    100% { opacity: 0; transform: scale(1.5) translateY(-20px); }
+    100% { opacity: 0; transform: scale(1.8) translateY(-40px) rotate(20deg); }
 }
 
-/* THANH VOLUME */
+/* VOLUME SLIDER */
 .volume-container {
     margin-top: 15px;
     display: flex;
@@ -29,11 +29,13 @@ body {
     gap: 10px;
 }
 input[type=range] {
-    accent-color: #ff69b4; /* Đổi màu thanh kéo sang hồng */
+    accent-color: #ff69b4;
     cursor: pointer;
-    width: 120px;
+    width: 130px;
 }
+.vol-icon { color: #ffb6c1; font-size: 14px; }
 
+/* CONTAINER & TABS */
 .container { background: rgba(0,0,0,0.85); padding: 25px; border-radius: 15px; width: 420px; border: 2px solid #ff69b4; text-align: center; position: relative; z-index: 1; }
 .pink-title { color: #ff69b4; margin-bottom: 20px; text-shadow: 0 0 10px #ff69b4; }
 .tabs { display: flex; gap: 5px; margin-bottom: 15px; flex-wrap: wrap; justify-content: center; }
